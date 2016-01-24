@@ -1,8 +1,15 @@
 {
-  "private": true,
+  "name": "laravue",
+  "version": "1.0.0",
+  "description": "A boilerplate for launching a single-page app with Laravel and Vue.js",
+  "main": "gulpfile.js",
+  "directories": {
+    "test": "tests"
+  },
   "devDependencies": {
     "gulp": "^3.9.0",
-    "laravel-elixir-vueify": "^1.0.0"
+    "laravel-elixir-vueify": "^1.0.0",
+    "vue-hot-reload-api": "^1.2.2",
   },
   "dependencies": {
     "laravel-elixir": "^4.2.0",
@@ -10,5 +17,22 @@
     "vue": "^1.0.15",
     "vue-router": "^0.7.10",
     "vue-resource": "^0.6.1"
-  }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsiebach/laravel-vue.git"
+  },
+  "keywords": [
+    "laravel",
+    "vue"
+  ],
+  "author": "Jeff Siebach",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jsiebach/laravel-vue/issues"
+  },
+  "homepage": "https://github.com/jsiebach/laravel-vue#readme"
 }
