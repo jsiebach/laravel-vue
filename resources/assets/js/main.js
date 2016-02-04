@@ -1,4 +1,4 @@
-var Vue = require("Vue");
+var Vue = require("vue");
 
 Vue.use(require('vue-resource'));
 
@@ -6,7 +6,7 @@ var VueRouter = require("vue-router");
 
 Vue.use(VueRouter);
 
-Vue.http.headers.common['X-CSRF-TOKEN'] = document.getElementByName('csrf_token').getAttribute('content')
+Vue.http.headers.common['X-CSRF-TOKEN'] = document.getElementsByName('csrf_token')[0].getAttribute('content')
 
 var router = new VueRouter();
 
