@@ -1,7 +1,7 @@
 <style lang="sass">
 </style>
 <template>
-{{message}
+{{message}}
 </template>
 <script>
 
