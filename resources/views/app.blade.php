@@ -8,9 +8,7 @@
     <link href="{{ elixir('css/master.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <router-view></router-view>
-    </div>
-    <script src="{{ elixir('js/master.js') }}"></script>
+    <router-view></router-view>
 </body>
+<script src="{{ elixir('js/master.js') }}"></script>
 </html>
