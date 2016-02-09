@@ -2,18 +2,16 @@
 </style>
 <template>
 {{message}}
-	<js-button></js-button>
+	<js-button :default_text="'button test'"></js-button>
 </template>
 <script>
-console.log(require("./../components"));
 export default {
 	name: 'Home',
 	data(){
 		return {
 			message:"Hello World!"
 		}
-	},
-	components:require("./../components")
+	}
 
 };
 

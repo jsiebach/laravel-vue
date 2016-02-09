@@ -10,6 +10,8 @@ Vue.http.headers.common['X-CSRF-TOKEN'] = document.getElementsByName('csrf_token
 
 var router = new VueRouter();
 
+var _ = window._ = require('underscore')
+
 import components from './components';
 _.each(components, function(value, key){
     Vue.component(key, value);
