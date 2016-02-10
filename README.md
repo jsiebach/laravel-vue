@@ -13,21 +13,34 @@ A basic template for a single-page application using Laravel and Vue.js
 4. There are many other useful app settings located in the `.env` file as well as throughout the `/config` directory that you should review.
 
 ## Compiling JS/CSS
-This project uses gulp to pre-compile css and js.  To compile, run `gulp`.  
+This project uses gulp to pre-compile css and js.  To compile, run `gulp`.
+
 Use `gulp --production` to minify the output.
-Use `gulp watch` to start hot-reloading. This will launch a server on `localhost:3000` unless you change the settings in `gulpfile.js`,
+
+Use `gulp watch` to start hot-reloading. This will launch a server on `localhost:3000` unless you change the settings in `gulpfile.js`.
+
 
 ## Included Packages
-This project comes pre-packaged with a few useful included packages:
+This project comes pre-packaged with a few useful libraries:
 
 ### JS Packages
 Bootstrap
+
 Moment.js
+
 Underscore.js
 
 ### Sass Includes
 Bootstrap Sass
+
 FontAwesome
 
 ### PHP Libraries
 Guzzle
+
+### Vue.JS Components
+Vue-Strap
+
+js-loading, a custom loading spinner component
+
+js-button, a custom button component
