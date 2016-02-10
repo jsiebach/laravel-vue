@@ -1,6 +1,6 @@
 export default {
     '/': {
-        component: require('./views/MainWrapper.vue'),
+        component: require('./App.vue'),
         subRoutes:{
             '/':{
                 component:require('./views/Home.vue'),
