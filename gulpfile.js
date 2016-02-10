@@ -18,7 +18,7 @@ elixir(function(mix) {
 	mix.browserify('main.js');
 
 	mix.browserSync({
-		//proxy: 'laravue.dev',
+		proxy: 'laravue.dev',
 		files: [
 			elixir.config.appPath + '/**/*.php',
 			elixir.config.get('public.css.outputFolder') + '/**/*.css',

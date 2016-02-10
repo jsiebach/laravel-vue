@@ -1,6 +1,11 @@
-var Home = require('./views/Home.vue');
 export default {
     '/': {
-        component: Home
+        component: require('./views/MainWrapper.vue'),
+        subRoutes:{
+            '/':{
+                component:require('./views/Home.vue'),
+                name:'Home'
+            }
+        }
     }
 }
