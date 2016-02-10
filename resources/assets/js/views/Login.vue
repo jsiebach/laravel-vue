@@ -120,7 +120,7 @@
                 this.error = false;
                 this.$refs.loginButton.loading();
                 this.$http.post('/auth/authenticate', this.loginData)
-                        .success(function(response, status, xhr){
+                        .then(function(response, status, xhr){
                             this.$refs.loginButton.success();
                             store.actions.setToken(response.token);
                             this.$http.get('/auth/user',function(userResponse, status, xhr){

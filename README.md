@@ -38,6 +38,8 @@ FontAwesome
 ### PHP Libraries
 Guzzle
 
+[https://github.com/barryvdh/laravel-ide-helper](Laravel IDE Helper)
+
 ### Vue.JS Components
 Vue-Strap
 
