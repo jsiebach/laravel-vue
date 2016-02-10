@@ -1,0 +1,13 @@
+_ide_helper.php
+.env
+.phpstorm.meta.php
+composer.lock
+PhpStorm-8ce39e71-9b28-498d-a106-b44b8ea4daca.php
+vendor
+public/build
+public/css
+public/js
+public/favicon.ico
+node_modules
+storage/logs
+.idea
