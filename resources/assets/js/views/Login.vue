@@ -87,8 +87,8 @@
     </div>
 </template>
 
-<script>
-    import store from '../../store';
+<script type="text/babel">
+    import store from '../store';
     export default {
         name:'AuthLogin',
         data() {

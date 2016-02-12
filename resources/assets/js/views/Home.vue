@@ -4,7 +4,7 @@
 {{message}}
 	<js-button :default_text="'button test'"></js-button>
 </template>
-<script>
+<script type="text/babel">
 export default {
 	name: 'Home',
 	data(){
@@ -14,5 +14,4 @@ export default {
 	}
 
 };
-
 </script>
