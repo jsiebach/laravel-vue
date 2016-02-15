@@ -9,6 +9,7 @@ A basic template for a single-page application using Laravel and Vue.js
 ## Laravel Set-up
 1. Rename the `.env.example` file to `.env`
 2. To generate an encryption key for your Laravel project, run `php artisan key:generate`
+2. To generate an encryption key for JWT web token authorization, run `php artisan jwt:generate`
 3. Set your database credentials in `.env`
 4. There are many other useful app settings located in the `.env` file as well as throughout the `/config` directory that you should review.
 

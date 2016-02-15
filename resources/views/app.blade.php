@@ -7,7 +7,7 @@
     <meta id="csrf_token" name="csrf_token" content="{{csrf_token()}}">
     <link href="{{ elixir('css/master.css') }}" rel="stylesheet">
 </head>
-<body>
+<body style="width:100%; height:100%;position: absolute;">
     <router-view></router-view>
 </body>
 <script src="{{ elixir('js/master.js') }}"></script>

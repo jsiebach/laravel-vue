@@ -1,4 +1,8 @@
 export default {
+    '/login':{
+        component:require('./views/Login.vue'),
+        name:'Login'
+    },
     '/': {
         component: require('./App.vue'),
         subRoutes:{
@@ -6,6 +10,7 @@ export default {
                 component:require('./views/Home.vue'),
                 name:'Home'
             }
+
         }
     }
 }

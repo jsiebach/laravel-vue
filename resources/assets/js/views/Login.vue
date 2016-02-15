@@ -34,13 +34,12 @@
                     <h3 class="panel-title">Log-In To {{ client.dashboard_name }}</h3>
                 </div>-->
                 <div class="panel-body text-center">
-                    <img style="max-height:80px; max-width:80%; height:auto; width:auto; margin: 10px 0 20px 0;" :src="client.logo ? client.logo : '/images/defaults/logo.png'" />
                     <div class="alert alert-danger" v-if="error" transition="slideUp">{{error_message}}</div>
-                    <form id="login" class="loginForm" v-on:submit.prevent="attemptLogin">
+                    <form id="login" class="loginForm" v-on:submit.prevent="submitForm">
                         <div class='form-group' :class="{'has-error':error}">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-user"></i> </span>
-                                <input type='text' v-model="loginData.username" class="form-control" maxlength="50" placeholder="Username or Email" />
+                                <input type='text' v-model="loginData.email" class="form-control" maxlength="50" placeholder="Username or Email" />
                             </div>
                         </div>
                         <div v-show="!forgot" transition="slideUp" class='form-group' :class="{'has-error':error}">
@@ -88,13 +87,13 @@
 </template>
 
 <script type="text/babel">
-    import store from '../store';
+    import AuthService from './../services/auth'
     export default {
-        name:'AuthLogin',
+        name:'Login',
         data() {
             return {
                 loginData:{
-                    username:'',
+                    email:'',
                     password:'',
                     remember:false
                 },
@@ -105,9 +104,6 @@
             }
         },
         computed:{
-            client(){
-                return store.state.client;
-            },
             swapModeText(){
                 if(this.mode = 'login'){
                     return 'Forgot password?';
@@ -116,29 +112,23 @@
             }
         },
         methods: {
-            attemptLogin (e){
+            submitForm (e){
                 this.error = false;
                 this.$refs.loginButton.loading();
-                this.$http.post('/auth/authenticate', this.loginData)
-                        .then(function(response, status, xhr){
-                            this.$refs.loginButton.success();
-                            store.actions.setToken(response.token);
-                            this.$http.get('/auth/user',function(userResponse, status, xhr){
-                                var that = this;
-                                store.actions.fetchUser(function(){
-                                    that.$route.router.go({
-                                        name:'clientDashboards',
-                                        params:{
-                                            client:store.state.user.client_id
-                                        }
-                                    });
-                                });
-                            });
-                        }).catch(function(response){
-                    this.error = true;
-                    this.error_message = "Could not log in using those credentials.";
-                    this.$refs.loginButton.reset();
+                AuthService.login(this.loginData)
+                    .then(this.loginSuccess)
+                    .catch(this.loginFailure);
+            },
+            loginSuccess(){
+                this.$refs.loginButton.success();
+                this.$route.router.go({
+                    name:'Home'
                 });
+            },
+            loginFailure(){
+                this.error = true;
+                this.error_message = "Could not log in using those credentials.";
+                this.$refs.loginButton.reset();
             },
             swapForgot(){
                 this.forgot = !this.forgot;
