@@ -5,7 +5,7 @@ Vue.use(VueRouter);
 var _ = window._ = require('underscore');
 var $ = window.$ = window.jQuery = require('jquery');
 require('bootstrap');
-require('bootstrap-growl');
+require('bootstrap-notify');
 
 var router = new VueRouter();
 
